@@ -4,8 +4,9 @@ set -xeou pipefail
 GOPATH=$(go env GOPATH)
 REPO_ROOT=$GOPATH/src/github.com/kubedb/mysql
 
-source "$REPO_ROOT/hack/libbuild/common/lib.sh"
-source "$REPO_ROOT/hack/libbuild/common/kubedb_image.sh"
+
+source "$(dirname "${BASH_SOURCE}")/lib.sh"
+source "$(dirname "${BASH_SOURCE}")/kubedb_image.sh"
 
 DOCKER_REGISTRY=${DOCKER_REGISTRY:-kubedb}
 
